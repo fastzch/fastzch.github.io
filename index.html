@@ -139,11 +139,11 @@
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                3
+                4
                 <span>文章</span>
             </div>
             <div class="article-info-block">
-                5
+                8
                 <span>标签</span>
             </div>
         </div>
@@ -171,6 +171,190 @@
 
             
             <section id="main">
+    <article id="post-Linksys-EA2700-Upgrade-to-DDWRT-Note" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/03/30/Linksys-EA2700-Upgrade-to-DDWRT-Note/">Linksys EA2700 Upgrade to DDWRT Note</a>
+        </h1>
+    
+
+                <div class="article-meta">
+                    
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/03/30/Linksys-EA2700-Upgrade-to-DDWRT-Note/">
+            <time datetime="2016-03-29T18:20:31.000Z" itemprop="datePublished">2016-03-30</time>
+        </a>
+    </div>
+
+
+                    
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Router/">Router</a>
+    </div>
+
+                    
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/DDWRT/">DDWRT</a>, <a class="tag-link" href="/tags/EA2700/">EA2700</a>, <a class="tag-link" href="/tags/Router/">Router</a>
+    </div>
+
+                </div>
+            </header>
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>I spent so many time to upgrade my new Linksys EA2700 router to the DD-WRT, and I get it finally.</p>
+<p>So exciting!</p>
+<h2 id="Use-following-steps"><a href="#Use-following-steps" class="headerlink" title="Use following steps:"></a>Use following steps:</h2><p>I’m new to dd-wrt (never used before) and linksys routers, so here are some explanation and notes i think usefull to start with dd-wrt on EA2700. </p>
+<p>Here, this is what i did starting with the linksys smartwifi factory firmware : </p>
+<ul>
+<li><p>1) soft default reset (15s) </p>
+</li>
+<li><p>2) flash linksys classic </p>
+<p>  <a href="http://kb.linksys.com/Linksys/ukp.aspx?vw=1&amp;articleid=25856" target="_blank" rel="external">http://kb.linksys.com/Linksys/ukp.aspx?vw=1&amp;articleid=25856</a> </p>
+<p>  <a href="http://downloads.linksys.com/downloads/firmware/FW_EA2700_1.0.14.129982.zip" target="_blank" rel="external">http://downloads.linksys.com/downloads/firmware/FW_EA2700_1.0.14.129982.zip</a> </p>
+</li>
+<li><p>3) hard reset 30/30/30 </p>
+<p>  <a href="http://www.dd-wrt.com/wiki/index.php/Hard_reset_or_30/30/30" target="_blank" rel="external">http://www.dd-wrt.com/wiki/index.php/Hard_reset_or_30/30/30</a> </p>
+</li>
+<li><p>4) flash linksys classic (even if it is already there) </p>
+</li>
+<li><p>5) hard reset 30/30/30 </p>
+</li>
+<li><p>6) flash BrainSlayer image (build 24160) </p>
+<p>  <a href="http://www.dd-wrt.com/phpBB2/viewtopic.php?t=261499&amp;postdays=0&amp;postorder=asc&amp;start=0" target="_blank" rel="external">http://www.dd-wrt.com/phpBB2/viewtopic.php?t=261499&amp;postdays=0&amp;postorder=asc&amp;start=0</a> </p>
+<p>  ftp://ftp.dd-wrt.com/others/eko/BrainSlayer-V24-preSP2/2014/05-27-2014-r24160/linksys-ea2700/ </p>
+</li>
+<li><p>7) After the first dd-wrt boot, set the boot options in GUI (Administration -&gt; commands -&gt; save startup) </p>
+<p>  nvram set partialboots=0 </p>
+<p>  nvram commit </p>
+</li>
+<li><p>8 ) hard reset 30/30/30 </p>
+</li>
+<li><p>9) set again the boot options wich ha been erased by the hard reset 30/30/30 (Administration -&gt; commands -&gt; save startup) </p>
+</li>
+<li><p>10) Configure dd-wrt like i want </p>
+</li>
+</ul>
+<h2 id="Some-notes-and-known-problems"><a href="#Some-notes-and-known-problems" class="headerlink" title="Some notes and known problems : "></a>Some notes and known problems : </h2><blockquote>
+<ul>
+<li><p>Without the falshing twice linksys classic (step 1 to 5), my EA2700 get back to stock after 3 reboots after flashing dd-wrt (step 6) </p>
+</li>
+<li><p>Without setting the boot options on step 7 and 9 my EA2700 get back to stock after reboot (seem like there will be no patch Sad <a href="http://svn.dd-wrt.com/ticket/3270" target="_blank" rel="external">http://svn.dd-wrt.com/ticket/3270</a>) </p>
+</li>
+<li><p>5Ghz radio is not detected, only 2.4Ghz is in the GUI (5Ghz radio is not supported but hope for usb drivers <a href="http://www.dd-wrt.com/phpBB2/viewtopic.php?p=824484#824484" target="_blank" rel="external">http://www.dd-wrt.com/phpBB2/viewtopic.php?p=824484#824484</a>) </p>
+</li>
+<li><p>Check Nvram use, between 25kb and 28kb (&lt; 32kb so i guess its ok) </p>
+<p> <a href="http://www.dd-wrt.com/phpBB2/viewtopic.php?p=883001#883001" target="_blank" rel="external">http://www.dd-wrt.com/phpBB2/viewtopic.php?p=883001#883001</a> </p>
+<p> <a href="http://www.dd-wrt.com/phpBB2/viewtopic.php?p=901523#901523" target="_blank" rel="external">http://www.dd-wrt.com/phpBB2/viewtopic.php?p=901523#901523</a> </p>
+</li>
+<li><p>dd-wrt shows giga build </p>
+</li>
+<li><p>QoS used for 2 days and works like a charm! Smile </p>
+</li>
+</ul>
+<p>Thanks BrainSlayer, Fractal, LOM , <em>Robb</em> and others for Serial Dump / reverse / giving us these firmwares<br>Thanks nolimitz and tehpensfan for the clear flash and known problems explanation for newbies and everybody at dd-wrt </p>
+<p>Continue this good job!</p>
+</blockquote>
+<p>Enjoy!</p>
+<p>Source forum artical address: <a href="http://www.dd-wrt.com/phpBB2/viewtopic.php?p=903074" target="_blank" rel="external">Link</a></p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://www.mxzhang.com/2016/03/30/Linksys-EA2700-Upgrade-to-DDWRT-Note/" data-id="cimdrab4w0001eeb1rb2lv4x1" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://www.mxzhang.com/2016/03/30/Linksys-EA2700-Upgrade-to-DDWRT-Note/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://www.mxzhang.com/2016/03/30/Linksys-EA2700-Upgrade-to-DDWRT-Note/">评论</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
     <article id="post-How-To-Get-ID3-Info-from-MP3-and-M4A" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -238,7 +422,7 @@
 
 </div>
 
-    <a data-url="http://www.mxzhang.com/2016/03/30/How-To-Get-ID3-Info-from-MP3-and-M4A/" data-id="cimdqdhur0000h6b1hsi739hz" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://www.mxzhang.com/2016/03/30/How-To-Get-ID3-Info-from-MP3-and-M4A/" data-id="cimdrab4s0000eeb1qnjawl2c" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -384,7 +568,7 @@
 
 </div>
 
-    <a data-url="http://www.mxzhang.com/2016/03/30/用-Hexo-搭建个人-Blog/" data-id="cimdp04v40001tdb1l2alknyu" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://www.mxzhang.com/2016/03/30/用-Hexo-搭建个人-Blog/" data-id="cimdrab510004eeb1rnmmof80" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -512,7 +696,7 @@
 
 </div>
 
-    <a data-url="http://www.mxzhang.com/2016/03/29/hello-world/" data-id="cimdp04v00000tdb1pww29h98" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://www.mxzhang.com/2016/03/29/hello-world/" data-id="cimdrab520005eeb1q0llkd25" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -602,6 +786,24 @@
                     <li>
                         
                         <div class="item-thumbnail">
+                            <a href="/2016/03/30/Linksys-EA2700-Upgrade-to-DDWRT-Note/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Router/">Router</a></p>
+                            <p class="item-title"><a href="/2016/03/30/Linksys-EA2700-Upgrade-to-DDWRT-Note/" class="title">Linksys EA2700 Upgrade to DDWRT Note</a></p>
+                            <p class="item-date"><time datetime="2016-03-29T18:20:31.000Z" itemprop="datePublished">2016-03-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
                             <a href="/2016/03/30/How-To-Get-ID3-Info-from-MP3-and-M4A/" class="thumbnail">
     
     
@@ -662,7 +864,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">分类</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Dev/">Dev</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Other/">Other</a><span class="category-list-count">1</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Dev/">Dev</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Other/">Other</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Router/">Router</a><span class="category-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -671,7 +873,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">归档</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">3</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">4</span></li></ul>
         </div>
     </div>
 
@@ -680,7 +882,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">标签</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blog/">Blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ID3/">ID3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/M4A/">M4A</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MP3/">MP3</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blog/">Blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DDWRT/">DDWRT</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/EA2700/">EA2700</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ID3/">ID3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/M4A/">M4A</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MP3/">MP3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Router/">Router</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -689,7 +891,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
-            <a href="/tags/Blog/" style="font-size: 10px;">Blog</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/ID3/" style="font-size: 10px;">ID3</a> <a href="/tags/M4A/" style="font-size: 10px;">M4A</a> <a href="/tags/MP3/" style="font-size: 10px;">MP3</a>
+            <a href="/tags/Blog/" style="font-size: 10px;">Blog</a> <a href="/tags/DDWRT/" style="font-size: 10px;">DDWRT</a> <a href="/tags/EA2700/" style="font-size: 10px;">EA2700</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/ID3/" style="font-size: 10px;">ID3</a> <a href="/tags/M4A/" style="font-size: 10px;">M4A</a> <a href="/tags/MP3/" style="font-size: 10px;">MP3</a> <a href="/tags/Router/" style="font-size: 10px;">Router</a>
         </div>
     </div>
 
