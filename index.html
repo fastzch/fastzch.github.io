@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang=zh>
 <head>
     <meta charset="utf-8">
     
@@ -71,7 +71,19 @@
             
             <div id="search-form-wrap">
 
-    <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Rechercher"><button type="submit" class="search-form-submit"> </button><input type="hidden" name="sitesearch" value="http://www.mxzhang.com"></form>
+    <form class="search-form" method="GET" action="https://www.baidu.com/s?">
+    <input name="wd" type="text" class="search-form-input" placeholder="搜索" />
+    <button type="submit" class="search-form-submit"></button>
+</form>
+<script>
+(function ($) {
+    $('.search-form').on('submit', function (e) {
+        var keyword = $('.search-form-input[name="wd"]').val();
+        window.location = 'https://www.baidu.com/s?wd=site:www.mxzhang.com ' + keyword;
+        return false;
+    });
+})(jQuery);
+</script>
 
 </div>
         </div>
@@ -92,7 +104,19 @@
                 
                 <td>
                     
-    <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Rechercher"><input type="hidden" name="sitesearch" value="http://www.mxzhang.com"></form>
+    <form class="search-form" method="GET" action="https://www.baidu.com/s?">
+    <input name="wd" type="text" class="search-form-input" placeholder="搜索" />
+    <button type="submit" class="search-form-submit"></button>
+</form>
+<script>
+(function ($) {
+    $('.search-form').on('submit', function (e) {
+        var keyword = $('.search-form-input[name="wd"]').val();
+        window.location = 'https://www.baidu.com/s?wd=site:www.mxzhang.com ' + keyword;
+        return false;
+    });
+})(jQuery);
+</script>
 
                 </td>
             </tr>
@@ -108,19 +132,19 @@
     <div class="inner profile-inner">
         <div class="base-info profile-block">
             <img id="avatar" src="/css/images/avatar.png" />
-            <h2 id="name">PPOffice</h2>
-            <h3 id="title">Web Developer &amp; Designer</h3>
-            <span id="location"><i class="fa fa-map-marker"></i>Harbin, China</span>
-            <a id="follow" target="_blank" href="https://github.com/ppoffice/">SUIVRE</a>
+            <h2 id="name">Robin.Zhang</h2>
+            <h3 id="title">ITer</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>Wuhan, China</span>
+            <a id="follow" target="_blank" href="https://github.com/fastzch/">关注我</a>
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                2
-                <span>Articles</span>
+                3
+                <span>文章</span>
             </div>
             <div class="article-info-block">
-                0
-                <span>Tag</span>
+                5
+                <span>标签</span>
             </div>
         </div>
         
@@ -128,13 +152,13 @@
             <table>
                 <tr>
                     
-                    <td><a href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank" title="github"><i class="fa fa-github"></i></a></td>
+                    <td><a href="http://github.com/fastzch/" target="_blank" title="github"><i class="fa fa-github"></i></a></td>
                     
-                    <td><a href="/" target="_blank" title="twitter"><i class="fa fa-twitter"></i></a></td>
+                    <td><a href="/fastzch" target="_blank" title="twitter"><i class="fa fa-twitter"></i></a></td>
                     
-                    <td><a href="/" target="_blank" title="facebook"><i class="fa fa-facebook"></i></a></td>
+                    <td><a href="/fastzch" target="_blank" title="facebook"><i class="fa fa-facebook"></i></a></td>
                     
-                    <td><a href="/" target="_blank" title="dribbble"><i class="fa fa-dribbble"></i></a></td>
+                    <td><a href="http://weibo.com/fastzch/" target="_blank" title="weibo"><i class="fa fa-weibo"></i></a></td>
                     
                     <td><a href="/" target="_blank" title="rss"><i class="fa fa-rss"></i></a></td>
                     
@@ -147,7 +171,7 @@
 
             
             <section id="main">
-    <article id="post-用-Hexo-搭建个人-Blog" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-How-To-Get-ID3-Info-from-MP3-and-M4A" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -156,7 +180,7 @@
                 
     
         <h1 itemprop="name">
-            <a class="article-title" href="/2016/03/30/用-Hexo-搭建个人-Blog/">用 Hexo 搭建个人 Blog </a>
+            <a class="article-title" href="/2016/03/30/How-To-Get-ID3-Info-from-MP3-and-M4A/">How To Get ID3 Info from MP3 and M4A</a>
         </h1>
     
 
@@ -164,33 +188,46 @@
                     
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2016/03/30/用-Hexo-搭建个人-Blog/">
-            <time datetime="2016-03-29T16:03:21.000Z" itemprop="datePublished">2016-03-30</time>
+        <a href="/2016/03/30/How-To-Get-ID3-Info-from-MP3-and-M4A/">
+            <time datetime="2016-03-29T17:50:39.000Z" itemprop="datePublished">2016-03-30</time>
         </a>
     </div>
 
 
                     
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Dev/">Dev</a>
+    </div>
+
                     
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/ID3/">ID3</a>, <a class="tag-link" href="/tags/M4A/">M4A</a>, <a class="tag-link" href="/tags/MP3/">MP3</a>
+    </div>
+
                 </div>
             </header>
         
         <div class="article-entry" itemprop="articleBody">
         
             
-            <p>最近 Hexo 非常火，加上之前用 Jeklly 搭建的个人 Blog 体验实在差强人意，所以决定切到 Hexo，养成更好的记录和分享习惯，同时，也帮助一下记忆力越来越差的快要生锈的那个大脑。</p>
-<p>不多废话，以下记录基于 Mac OS X, 开始：</p>
-<p>1，安装Hexo:</p>
-<pre><code>npm install hexo-cli -g
-hexo init blog
-cd blog
-npm install
-hexo server
-</code></pre><p>这样就装好了, So easy。参考的当然是官网：<a href="https://hexo.io/" target="_blank" rel="external">https://hexo.io/</a></p>
-<p>2, 安装主题，我选择了 icarus，纯属个人口味，更多主题，当然可以参考：<a href="https://hexo.io/themes/" target="_blank" rel="external">https://hexo.io/themes/</a></p>
-<p>安装步骤，可参考： <a href="https://github.com/ppoffice/hexo-theme-icarus/wiki/Installation" target="_blank" rel="external">https://github.com/ppoffice/hexo-theme-icarus/wiki/Installation</a></p>
-<p>3，一系列的配置，我主要修改了一些主题内相关的配置，记录如下，可参考文档：<br><a href="https://github.com/ppoffice/hexo-theme-icarus/wiki/Configuration" target="_blank" rel="external">https://github.com/ppoffice/hexo-theme-icarus/wiki/Configuration</a></p>
-<p>4，发布到 Github.</p>
+            <h2 id="Cause"><a href="#Cause" class="headerlink" title="Cause:"></a>Cause:</h2><p>Today, I got a requriement that get ID3 info from MP3 and M4A files.</p>
+<p>I am good on MP3 knowledge, but I don’t familiar on M4A format so far.</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution:"></a>Solution:</h2><p>First of all, I google it, and then I got answer so quickly.</p>
+<p>I found a lib can help me to get them.</p>
+<p><a href="http://www.jthink.net/jaudiotagger/" target="_blank" rel="external">Jaudiotagger</a></p>
+<h2 id="Codes"><a href="#Codes" class="headerlink" title="Codes:"></a>Codes:</h2><p>Let’s see code directly:</p>
+<ul>
+<li>Get track playing duration:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">AudioFile f = AudioFileIO.read(musicFile);</span><br><span class="line">int playingLen = f.getAudioHeader().getTrackLength();</span><br></pre></td></tr></table></figure>
+<p>It just so simple.</p>
+<ul>
+<li>Get ID3 info:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">AudioFile f = AudioFileIO.read(file);</span><br><span class="line">Tag tag = f.getTag();</span><br><span class="line">String artist = tag.getFirst(FieldKey.ARTIST);</span><br><span class="line">String id3Title = tag.getFirst(FieldKey.TITLE);</span><br><span class="line">String genre = tag.getFirst(FieldKey.GENRE);</span><br></pre></td></tr></table></figure>
+<p>For more properties, you cloud refer FieldKey class.</p>
 
         
         </div>
@@ -201,7 +238,7 @@ hexo server
 
 </div>
 
-    <a data-url="http://www.mxzhang.com/2016/03/30/用-Hexo-搭建个人-Blog/" data-id="cimdn8crn0001p3b19nhyo25j" class="article-share-link"><i class="fa fa-share"></i>Partager</a>
+    <a data-url="http://www.mxzhang.com/2016/03/30/How-To-Get-ID3-Info-from-MP3-and-M4A/" data-id="cimdqdhur0000h6b1hsi739hz" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -269,7 +306,153 @@ hexo server
 
             
     
-        <a href="http://www.mxzhang.com/2016/03/30/用-Hexo-搭建个人-Blog/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://www.mxzhang.com/2016/03/30/用-Hexo-搭建个人-Blog/">Commentaires</a>
+        <a href="http://www.mxzhang.com/2016/03/30/How-To-Get-ID3-Info-from-MP3-and-M4A/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://www.mxzhang.com/2016/03/30/How-To-Get-ID3-Info-from-MP3-and-M4A/">评论</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+    <article id="post-用-Hexo-搭建个人-Blog" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/03/30/用-Hexo-搭建个人-Blog/">用 Hexo 搭建个人 Blog </a>
+        </h1>
+    
+
+                <div class="article-meta">
+                    
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/03/30/用-Hexo-搭建个人-Blog/">
+            <time datetime="2016-03-29T16:03:00.000Z" itemprop="datePublished">2016-03-30</time>
+        </a>
+    </div>
+
+
+                    
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Other/">Other</a>
+    </div>
+
+                    
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Blog/">Blog</a>, <a class="tag-link" href="/tags/Hexo/">Hexo</a>
+    </div>
+
+                </div>
+            </header>
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>最近 Hexo 非常火，加上之前用 Jeklly 搭建的个人 Blog 体验实在差强人意，所以决定切到 Hexo，养成更好的记录和分享习惯，同时，也帮助一下记忆力越来越差的快要生锈的那个大脑。</p>
+<p>不多废话，以下记录基于 Mac OS X, 开始：</p>
+<p>1，安装Hexo:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-cli -g</span><br><span class="line">$ hexo init blog</span><br><span class="line">$ cd blog</span><br><span class="line">$ npm install</span><br><span class="line">$ hexo server</span><br></pre></td></tr></table></figure></p>
+<p>这样就装好了, So easy。参考的当然是官网：<a href="https://hexo.io/" target="_blank" rel="external">Hexo</a></p>
+<p>2, 安装主题，我选择了 <a href="https://github.com/ppoffice/hexo-theme-icarus/" target="_blank" rel="external">icarus</a>，纯属个人口味，更多主题，当然可以参考：<a href="https://hexo.io/themes/" target="_blank" rel="external">Hexo Themes</a></p>
+<p>安装步骤，可参考： <a href="https://github.com/ppoffice/hexo-theme-icarus/wiki/Installation" target="_blank" rel="external">icarus Installtion</a></p>
+<p>3，一系列的配置，我主要修改了一些主题内相关的配置，记录如下，可参考文档：<br><a href="https://github.com/ppoffice/hexo-theme-icarus/wiki/Configuration" target="_blank" rel="external">Hexo Configuration</a></p>
+<p>4，发布到 Github.</p>
+<p>首先，得安装插件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<p>然后修改配置如下：</p>
+<pre><code>deploy: 
+    type: git
+    repository: https://github.com/fastzch/fastzch.github.io.git
+    branch: master
+</code></pre><p>注意：网上有很多文章中写法可能太老，配置后，无法 deploy 到 git.</p>
+<p>好了，大功告成！</p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://www.mxzhang.com/2016/03/30/用-Hexo-搭建个人-Blog/" data-id="cimdp04v40001tdb1l2alknyu" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://www.mxzhang.com/2016/03/30/用-Hexo-搭建个人-Blog/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://www.mxzhang.com/2016/03/30/用-Hexo-搭建个人-Blog/">评论</a>
     
 
         </footer>
@@ -329,7 +512,7 @@ hexo server
 
 </div>
 
-    <a data-url="http://www.mxzhang.com/2016/03/29/hello-world/" data-id="cimdn8cri0000p3b1qtlfmo53" class="article-share-link"><i class="fa fa-share"></i>Partager</a>
+    <a data-url="http://www.mxzhang.com/2016/03/29/hello-world/" data-id="cimdp04v00000tdb1pww29h98" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -397,7 +580,7 @@ hexo server
 
             
     
-        <a href="http://www.mxzhang.com/2016/03/29/hello-world/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://www.mxzhang.com/2016/03/29/hello-world/">Commentaires</a>
+        <a href="http://www.mxzhang.com/2016/03/29/hello-world/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://www.mxzhang.com/2016/03/29/hello-world/">评论</a>
     
 
         </footer>
@@ -412,9 +595,27 @@ hexo server
     
         
     <div class="widget-wrap">
-        <h3 class="widget-title">Récents</h3>
+        <h3 class="widget-title">最新文章</h3>
         <div class="widget">
             <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/03/30/How-To-Get-ID3-Info-from-MP3-and-M4A/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a></p>
+                            <p class="item-title"><a href="/2016/03/30/How-To-Get-ID3-Info-from-MP3-and-M4A/" class="title">How To Get ID3 Info from MP3 and M4A</a></p>
+                            <p class="item-date"><time datetime="2016-03-29T17:50:39.000Z" itemprop="datePublished">2016-03-30</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -428,9 +629,9 @@ hexo server
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/Other/">Other</a></p>
                             <p class="item-title"><a href="/2016/03/30/用-Hexo-搭建个人-Blog/" class="title">用 Hexo 搭建个人 Blog </a></p>
-                            <p class="item-date"><time datetime="2016-03-29T16:03:21.000Z" itemprop="datePublished">2016-03-30</time></p>
+                            <p class="item-date"><time datetime="2016-03-29T16:03:00.000Z" itemprop="datePublished">2016-03-30</time></p>
                         </div>
                     </li>
                 
@@ -458,23 +659,44 @@ hexo server
 
     
         
-    
-        
     <div class="widget-wrap">
-        <h3 class="widget-title">Archives</h3>
+        <h3 class="widget-title">分类</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">2</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Dev/">Dev</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Other/">Other</a><span class="category-list-count">1</span></li></ul>
         </div>
     </div>
 
     
         
+    <div class="widget-wrap">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">3</span></li></ul>
+        </div>
+    </div>
+
     
         
+    <div class="widget-wrap">
+        <h3 class="widget-title">标签</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blog/">Blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ID3/">ID3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/M4A/">M4A</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MP3/">MP3</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Blog/" style="font-size: 10px;">Blog</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/ID3/" style="font-size: 10px;">ID3</a> <a href="/tags/M4A/" style="font-size: 10px;">M4A</a> <a href="/tags/MP3/" style="font-size: 10px;">MP3</a>
+        </div>
+    </div>
+
     
         
     <div class="widget-wrap widget-list">
-        <h3 class="widget-title">Liens</h3>
+        <h3 class="widget-title">链接</h3>
         <div class="widget">
             <ul>
                 

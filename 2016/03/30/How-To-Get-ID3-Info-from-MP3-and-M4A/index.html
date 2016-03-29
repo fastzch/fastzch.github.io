@@ -3,17 +3,24 @@
 <head>
     <meta charset="utf-8">
     
-    <title>归档 | FSD Space</title>
+    <title>How To Get ID3 Info from MP3 and M4A | FSD Space</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="FSD Space">
-<meta property="og:url" content="http://www.mxzhang.com/archives/index.html">
+    <meta name="description" content="Cause:Today, I got a requriement that get ID3 info from MP3 and M4A files.
+I am good on MP3 knowledge, but I don’t familiar on M4A format so far.
+Solution:First of all, I google it, and then I got ans">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How To Get ID3 Info from MP3 and M4A">
+<meta property="og:url" content="http://www.mxzhang.com/2016/03/30/How-To-Get-ID3-Info-from-MP3-and-M4A/index.html">
 <meta property="og:site_name" content="FSD Space">
-<meta property="og:description">
+<meta property="og:description" content="Cause:Today, I got a requriement that get ID3 info from MP3 and M4A files.
+I am good on MP3 knowledge, but I don’t familiar on M4A format so far.
+Solution:First of all, I google it, and then I got ans">
+<meta property="og:updated_time" content="2016-03-29T18:11:11.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="FSD Space">
-<meta name="twitter:description">
+<meta name="twitter:title" content="How To Get ID3 Info from MP3 and M4A">
+<meta name="twitter:description" content="Cause:Today, I got a requriement that get ID3 info from MP3 and M4A files.
+I am good on MP3 knowledge, but I don’t familiar on M4A format so far.
+Solution:First of all, I google it, and then I got ans">
     
 
     
@@ -170,20 +177,16 @@
 </aside>
 
             
-            <section id="main"><div class="timeline timeline-wrap">
-    
-            <div class="timeline-row timeline-row-major">
-                <span class="node"><i class="fa fa-calendar"></i></span>
-                <h1 class="title">2016</h1>
-            </div>
+            <section id="main"><article id="post-How-To-Get-ID3-Info-from-MP3-and-M4A" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
         
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
+        
+        
+            <header class="article-header">
                 
     
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2016/03/30/How-To-Get-ID3-Info-from-MP3-and-M4A/">How To Get ID3 Info from MP3 and M4A</a>
+        <h1 class="article-title" itemprop="name">
+            How To Get ID3 Info from MP3 and M4A
         </h1>
     
 
@@ -210,72 +213,138 @@
     </div>
 
                 </div>
-            </div>
+            </header>
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h2 id="Cause"><a href="#Cause" class="headerlink" title="Cause:"></a>Cause:</h2><p>Today, I got a requriement that get ID3 info from MP3 and M4A files.</p>
+<p>I am good on MP3 knowledge, but I don’t familiar on M4A format so far.</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution:"></a>Solution:</h2><p>First of all, I google it, and then I got answer so quickly.</p>
+<p>I found a lib can help me to get them.</p>
+<p><a href="http://www.jthink.net/jaudiotagger/" target="_blank" rel="external">Jaudiotagger</a></p>
+<h2 id="Codes"><a href="#Codes" class="headerlink" title="Codes:"></a>Codes:</h2><p>Let’s see code directly:</p>
+<ul>
+<li>Get track playing duration:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">AudioFile f = AudioFileIO.read(musicFile);</span><br><span class="line">int playingLen = f.getAudioHeader().getTrackLength();</span><br></pre></td></tr></table></figure>
+<p>It just so simple.</p>
+<ul>
+<li>Get ID3 info:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">AudioFile f = AudioFileIO.read(file);</span><br><span class="line">Tag tag = f.getTag();</span><br><span class="line">String artist = tag.getFirst(FieldKey.ARTIST);</span><br><span class="line">String id3Title = tag.getFirst(FieldKey.TITLE);</span><br><span class="line">String genre = tag.getFirst(FieldKey.GENRE);</span><br></pre></td></tr></table></figure>
+<p>For more properties, you cloud refer FieldKey class.</p>
+
+        
         </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
-                
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2016/03/30/用-Hexo-搭建个人-Blog/">用 Hexo 搭建个人 Blog </a>
-        </h1>
-    
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/03/30/用-Hexo-搭建个人-Blog/">
-            <time datetime="2016-03-29T16:03:00.000Z" itemprop="datePublished">2016-03-30</time>
-        </a>
-    </div>
+        <footer class="article-footer">
+            <div class="share-container">
 
 
-                    
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/Other/">Other</a>
-    </div>
 
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Blog/">Blog</a>, <a class="tag-link" href="/tags/Hexo/">Hexo</a>
-    </div>
-
-                </div>
-            </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
-                
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2016/03/29/hello-world/">Hello World</a>
-        </h1>
-    
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/03/29/hello-world/">
-            <time datetime="2016-03-29T15:06:11.000Z" itemprop="datePublished">2016-03-29</time>
-        </a>
-    </div>
-
-
-                    
-                    
-                </div>
-            </div>
-        </div>
-    
 </div>
+
+    <a data-url="http://www.mxzhang.com/2016/03/30/How-To-Get-ID3-Info-from-MP3-and-M4A/" data-id="cimdqdhur0000h6b1hsi739hz" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://www.mxzhang.com/2016/03/30/How-To-Get-ID3-Info-from-MP3-and-M4A/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://www.mxzhang.com/2016/03/30/How-To-Get-ID3-Info-from-MP3-and-M4A/">评论</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2016/03/30/用-Hexo-搭建个人-Blog/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">用 Hexo 搭建个人 Blog </div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
 </section>
             
                 <aside id="sidebar">
@@ -415,11 +484,13 @@
     var disqus_shortname = 'hexo-theme-icarus';
     
     
+    var disqus_url = 'http://www.mxzhang.com/2016/03/30/How-To-Get-ID3-Info-from-MP3-and-M4A/';
+    
     (function() {
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>
