@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html lang=zh>
+<html>
 <head>
     <meta charset="utf-8">
     
     <title>How To Get ID3 Info from MP3 and M4A | FSD Space</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="ID3,MP3,M4A" />
+    
     <meta name="description" content="Cause:Today, I got a requriement that get ID3 info from MP3 and M4A files.
 I am good on MP3 knowledge, but I don’t familiar on M4A format so far.
 Solution:First of all, I google it, and then I got an">
@@ -30,59 +33,57 @@ Solution:First of all, I google it, and then I got an">
     
 
     <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/vendor/open-sans/styles.css">
+    <link rel="stylesheet" href="/vendor/titillium-web/styles.css">
     <link rel="stylesheet" href="/vendor/source-code-pro/styles.css">
 
     <link rel="stylesheet" href="/css/style.css">
 
-    <script src="/vendor/jquery/2.1.3/jquery.min.js"></script>
+    <script src="/vendor/jquery/2.0.3/jquery.min.js"></script>
     
     
         <link rel="stylesheet" href="/vendor/fancybox/jquery.fancybox.css">
     
     
+        <link rel="stylesheet" href="/vendor/scrollLoading/style.css">
+    
     
     
 
 </head>
+
 <body>
-    <div id="container">
+    <div id="wrap">
         <header id="header">
-    <div id="header-main" class="header-inner">
-        <div class="outer">
-            <a href="/" id="logo">
-                <i class="logo"></i>
-                <span class="site-title">FSD Space</span>
-            </a>
-            <nav id="main-nav">
-                
-                    <a class="main-nav-link" href="/.">Home</a>
-                
-                    <a class="main-nav-link" href="/archives">Archives</a>
-                
-                    <a class="main-nav-link" href="/categories">Categories</a>
-                
-                    <a class="main-nav-link" href="/tags">Tags</a>
-                
-                    <a class="main-nav-link" href="/about">About</a>
-                
-            </nav>
-            
-                
-                <nav id="sub-nav">
-                    <div class="profile" id="profile-nav">
-                        <a id="profile-anchor" href="javascript:;">
-                            <img class="avatar" src="/css/images/avatar.png" />
-                            <i class="fa fa-caret-down"></i>
-                        </a>
-                    </div>
-                </nav>
-            
-            <div id="search-form-wrap">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">主页</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/">Dev</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Other/">Other</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Router/">Router</a></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">关于</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
 
     <form class="search-form" method="GET" action="https://www.baidu.com/s?">
     <input name="wd" type="text" class="search-form-input" placeholder="搜索" />
-    <button type="submit" class="search-form-submit"></button>
 </form>
 <script>
 (function ($) {
@@ -95,131 +96,46 @@ Solution:First of all, I google it, and then I got an">
 </script>
 
 </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-    <div id="main-nav-mobile" class="header-sub header-inner">
-        <table class="menu outer">
-            <tr>
-                
-                    <td><a class="main-nav-link" href="/.">Home</a></td>
-                
-                    <td><a class="main-nav-link" href="/archives">Archives</a></td>
-                
-                    <td><a class="main-nav-link" href="/categories">Categories</a></td>
-                
-                    <td><a class="main-nav-link" href="/tags">Tags</a></td>
-                
-                    <td><a class="main-nav-link" href="/about">About</a></td>
-                
-                <td>
-                    
-    <form class="search-form" method="GET" action="https://www.baidu.com/s?">
-    <input name="wd" type="text" class="search-form-input" placeholder="搜索" />
-    <button type="submit" class="search-form-submit"></button>
-</form>
-<script>
-(function ($) {
-    $('.search-form').on('submit', function (e) {
-        var keyword = $('.search-form-input[name="wd"]').val();
-        window.location = 'https://www.baidu.com/s?wd=site:www.mxzhang.com ' + keyword;
-        return false;
-    });
-})(jQuery);
-</script>
-
-                </td>
-            </tr>
-        </table>
     </div>
 </header>
-
-        <div class="outer">
-            
-                
-
-<aside id="profile">
-    <div class="inner profile-inner">
-        <div class="base-info profile-block">
-            <img id="avatar" src="/css/images/avatar.png" />
-            <h2 id="name">Robin.Zhang</h2>
-            <h3 id="title">ITer</h3>
-            <span id="location"><i class="fa fa-map-marker"></i>Wuhan, China</span>
-            <a id="follow" target="_blank" href="https://github.com/fastzch/">关注我</a>
-        </div>
-        <div class="article-info profile-block">
-            <div class="article-info-block">
-                3
-                <span>文章</span>
-            </div>
-            <div class="article-info-block">
-                8
-                <span>标签</span>
-            </div>
-        </div>
-        
-        <div class="profile-block social-links">
-            <table>
-                <tr>
-                    
-                    <td><a href="http://github.com/fastzch/" target="_blank" title="github"><i class="fa fa-github"></i></a></td>
-                    
-                    <td><a href="/fastzch" target="_blank" title="twitter"><i class="fa fa-twitter"></i></a></td>
-                    
-                    <td><a href="/fastzch" target="_blank" title="facebook"><i class="fa fa-facebook"></i></a></td>
-                    
-                    <td><a href="http://weibo.com/fastzch/" target="_blank" title="weibo"><i class="fa fa-weibo"></i></a></td>
-                    
-                    <td><a href="/" target="_blank" title="rss"><i class="fa fa-rss"></i></a></td>
-                    
-                </tr>
-            </table>
-        </div>
-        
-    </div>
-</aside>
-
-            
-            <section id="main"><article id="post-How-To-Get-ID3-Info-from-MP3-and-M4A" class="article article-type-post" itemscope itemprop="blogPost">
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Dev/">Dev</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-How-To-Get-ID3-Info-from-MP3-and-M4A" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
-        
-        
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-            How To Get ID3 Info from MP3 and M4A
+        How To Get ID3 Info from MP3 and M4A
         </h1>
     
 
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/03/30/How-To-Get-ID3-Info-from-MP3-and-M4A/">
-            <time datetime="2016-03-29T17:50:39.000Z" itemprop="datePublished">2016-03-30</time>
-        </a>
-    </div>
-
-
-                    
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/Dev/">Dev</a>
-    </div>
-
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/ID3/">ID3</a>, <a class="tag-link" href="/tags/M4A/">M4A</a>, <a class="tag-link" href="/tags/MP3/">MP3</a>
-    </div>
-
-                </div>
             </header>
         
-        <div class="article-entry" itemprop="articleBody">
-        
+        <div class="article-subtitle">
+            <a href="/2016/03/30/How-To-Get-ID3-Info-from-MP3-and-M4A/" class="article-date">
+    <time datetime="2016-03-29T17:50:39.000Z" itemprop="datePublished">2016-03-30</time>
+</a>
             
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ID3/">ID3</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/M4A/">M4A</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MP3/">MP3</a></li></ul>
+
+        </div>
+        <div class="article-entry" itemprop="articleBody">
             <p><img src="/imgs/m4a-mp3.png" alt=""></p>
 <h2 id="Cause"><a href="#Cause" class="headerlink" title="Cause:"></a>Cause:</h2><p>Today, I got a requriement that get ID3 info from MP3 and M4A files.</p>
 <p>I am good on MP3 knowledge, but I don’t familiar on M4A format so far.</p>
@@ -238,24 +154,15 @@ Solution:First of all, I google it, and then I got an">
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">AudioFile f = AudioFileIO.read(file);</span><br><span class="line">Tag tag = f.getTag();</span><br><span class="line">String artist = tag.getFirst(FieldKey.ARTIST);</span><br><span class="line">String id3Title = tag.getFirst(FieldKey.TITLE);</span><br><span class="line">String genre = tag.getFirst(FieldKey.GENRE);</span><br></pre></td></tr></table></figure>
 <p>For more properties, you cloud refer FieldKey class.</p>
 
-        
         </div>
         <footer class="article-footer">
-            <div class="share-container">
+            
 
 
 
-</div>
-
-    <a data-url="http://www.mxzhang.com/2016/03/30/How-To-Get-ID3-Info-from-MP3-and-M4A/" data-id="cimdqdhur0000h6b1hsi739hz" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://www.mxzhang.com/2016/03/30/How-To-Get-ID3-Info-from-MP3-and-M4A/" data-id="cimexdxdm0000mvb1hov2f06i" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
         $('body').on('click', function() {
             $('.article-share-box.on').removeClass('on');
         }).on('click', '.article-share-link', function(e) {
@@ -280,10 +187,10 @@ Solution:First of all, I google it, and then I got an">
                     '<div id="' + id + '" class="article-share-box">',
                         '<input class="article-share-input" value="' + url + '">',
                         '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
                         '</div>',
                     '</div>'
                 ].join('');
@@ -313,55 +220,92 @@ Solution:First of all, I google it, and then I got an">
     })(jQuery);
 </script>
 
-            
-    
-        <a href="http://www.mxzhang.com/2016/03/30/How-To-Get-ID3-Info-from-MP3-and-M4A/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://www.mxzhang.com/2016/03/30/How-To-Get-ID3-Info-from-MP3-and-M4A/">评论</a>
-    
-
         </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+    </section>
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>关注我 :</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="https://www.twitter.com/RobinMXZ" target="_blank">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="https://www.facebook.com/RobinMXZhang" target="_blank">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/fastzch" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="http://www.weibo.com/fastzch" target="_blank">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/atom.xml" target="_blank">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
     </div>
     
         
 <nav id="article-nav">
     
         <a href="/2016/03/30/Linksys-EA2700-Upgrade-to-DDWRT-Note/" id="article-nav-newer" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">上一篇</strong>
-            <div class="article-nav-title">
-                
-                    Linksys EA2700 Upgrade to DDWRT Note
-                
-            </div>
-        </a>
+        <strong class="article-nav-caption">下一篇</strong>
+        <p class="article-nav-title">
+        
+            Linksys EA2700 Upgrade to DDWRT Note
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
     
     
         <a href="/2016/03/30/用-Hexo-搭建个人-Blog/" id="article-nav-older" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">下一篇</strong>
-            <div class="article-nav-title">用 Hexo 搭建个人 Blog </div>
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">用 Hexo 搭建个人 Blog </p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
 </nav>
 
-
     
-</article>
-
-
-    
-    <section id="comments">
-    
+    <div class="widgets-container">
         
-    <div id="disqus_thread">
-        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    </div>
-
-    
-    </section>
-
-</section>
             
-                <aside id="sidebar">
-    
-        
+                
     <div class="widget-wrap">
         <h3 class="widget-title">最新文章</h3>
         <div class="widget">
@@ -374,6 +318,7 @@ Solution:First of all, I google it, and then I got an">
     
     
         <span style="background-image:url(/imgs/cisco-ea2700-wireless-router-linksys.jpg)" alt="Linksys EA2700 Upgrade to DDWRT Note" class="thumbnail-image"></span>
+    
     
 </a>
                         </div>
@@ -393,6 +338,7 @@ Solution:First of all, I google it, and then I got an">
     
         <span style="background-image:url(/imgs/m4a-mp3.png)" alt="How To Get ID3 Info from MP3 and M4A" class="thumbnail-image"></span>
     
+    
 </a>
                         </div>
                         
@@ -411,6 +357,7 @@ Solution:First of all, I google it, and then I got an">
     
         <span style="background-image:url(/imgs/tree.jpg)" alt="用 Hexo 搭建个人 Blog " class="thumbnail-image"></span>
     
+    
 </a>
                         </div>
                         
@@ -425,44 +372,48 @@ Solution:First of all, I google it, and then I got an">
         </div>
     </div>
 
-    
-        
-    <div class="widget-wrap">
+            
+                
+    <div class="widget-wrap widget-list">
         <h3 class="widget-title">分类</h3>
         <div class="widget">
             <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Dev/">Dev</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Other/">Other</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Router/">Router</a><span class="category-list-count">1</span></li></ul>
         </div>
     </div>
 
-    
-        
-    <div class="widget-wrap">
+
+            
+                
+    <div class="widget-wrap widget-list">
         <h3 class="widget-title">归档</h3>
         <div class="widget">
             <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">3</span></li></ul>
         </div>
     </div>
 
-    
-        
-    <div class="widget-wrap">
+
+            
+                
+    <div class="widget-wrap widget-list">
         <h3 class="widget-title">标签</h3>
         <div class="widget">
             <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blog/">Blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DDWRT/">DDWRT</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/EA2700/">EA2700</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ID3/">ID3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/M4A/">M4A</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MP3/">MP3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Router/">Router</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
-    
-        
-    <div class="widget-wrap">
+
+            
+                
+    <div class="widget-wrap widget-float">
         <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
             <a href="/tags/Blog/" style="font-size: 10px;">Blog</a> <a href="/tags/DDWRT/" style="font-size: 10px;">DDWRT</a> <a href="/tags/EA2700/" style="font-size: 10px;">EA2700</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/ID3/" style="font-size: 10px;">ID3</a> <a href="/tags/M4A/" style="font-size: 10px;">M4A</a> <a href="/tags/MP3/" style="font-size: 10px;">MP3</a> <a href="/tags/Router/" style="font-size: 10px;">Router</a>
         </div>
     </div>
 
-    
-        
+
+            
+                
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">链接</h3>
         <div class="widget">
@@ -477,40 +428,36 @@ Solution:First of all, I google it, and then I got an">
     </div>
 
 
-    
-    <div id="toTop" class="fa fa-chevron-up"></div>
-</aside>
             
+        
+    </div>
+</aside>
+                </div>
+            </div>
         </div>
         <footer id="footer">
-    <div class="outer">
-        <div id="footer-info" class="inner">
-            &copy; 2016 Robin.Zhang<br>
-            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2016 Robin.Zhang</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
         </div>
     </div>
 </footer>
         
-    
-    <script>
-    var disqus_shortname = 'hexo-theme-icarus';
-    
-    
-    var disqus_url = 'http://www.mxzhang.com/2016/03/30/How-To-Get-ID3-Info-from-MP3-and-M4A/';
-    
-    (function() {
-    var dsq = document.createElement('script');
-    dsq.type = 'text/javascript';
-    dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-    </script>
-
-
 
     
         <script src="/vendor/fancybox/jquery.fancybox.pack.js"></script>
+    
+
+    
+        <script src="/vendor/scrollLoading/jquery.scrollLoading.js"></script>
+        <script src="/vendor/scrollLoading/main.js"></script>
     
 
 

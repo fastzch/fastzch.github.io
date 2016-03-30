@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>FSD Space</title>
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://www.mxzhang.com/"/>
+  <updated>2016-03-29T19:10:46.000Z</updated>
+  <id>http://www.mxzhang.com/</id>
+  
+  <author>
+    <name>Robin.Zhang</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linksys EA2700 Upgrade to DDWRT Note</title>
+    <link href="http://www.mxzhang.com/2016/03/30/Linksys-EA2700-Upgrade-to-DDWRT-Note/"/>
+    <id>http://www.mxzhang.com/2016/03/30/Linksys-EA2700-Upgrade-to-DDWRT-Note/</id>
+    <published>2016-03-29T18:20:31.000Z</published>
+    <updated>2016-03-29T19:10:46.000Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;img src=&quot;/imgs/cisco-ea2700-wireless-router-linksys.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;I spent so many time to upgrade my new Linksys EA2700 router to the DD-WRT, and I get it finally.&lt;/p&gt;
+&lt;p&gt;So exciting!&lt;/p&gt;
+&lt;h2 id=&quot;Use-following-steps&quot;&gt;&lt;a href=&quot;#Use-following-steps&quot; class=&quot;headerlink&quot; title=&quot;Use following steps:&quot;&gt;&lt;/a&gt;Use following steps:&lt;/h2&gt;&lt;p&gt;I’m new to dd-wrt (never used before) and linksys routers, so here are some explanation and notes i think usefull to start with dd-wrt on EA2700. &lt;/p&gt;
+&lt;p&gt;Here, this is what i did starting with the linksys smartwifi factory firmware : &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;1) soft default reset (15s) &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;2) flash linksys classic &lt;/p&gt;
+&lt;p&gt;  &lt;a href=&quot;http://kb.linksys.com/Linksys/ukp.aspx?vw=1&amp;amp;articleid=25856&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://kb.linksys.com/Linksys/ukp.aspx?vw=1&amp;amp;articleid=25856&lt;/a&gt; &lt;/p&gt;
+&lt;p&gt;  &lt;a href=&quot;http://downloads.linksys.com/downloads/firmware/FW_EA2700_1.0.14.129982.zip&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://downloads.linksys.com/downloads/firmware/FW_EA2700_1.0.14.129982.zip&lt;/a&gt; &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;3) hard reset 30/30/30 &lt;/p&gt;
+&lt;p&gt;  &lt;a href=&quot;http://www.dd-wrt.com/wiki/index.php/Hard_reset_or_30/30/30&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.dd-wrt.com/wiki/index.php/Hard_reset_or_30/30/30&lt;/a&gt; &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;4) flash linksys classic (even if it is already there) &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;5) hard reset 30/30/30 &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;6) flash BrainSlayer image (build 24160) &lt;/p&gt;
+&lt;p&gt;  &lt;a href=&quot;http://www.dd-wrt.com/phpBB2/viewtopic.php?t=261499&amp;amp;postdays=0&amp;amp;postorder=asc&amp;amp;start=0&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.dd-wrt.com/phpBB2/viewtopic.php?t=261499&amp;amp;postdays=0&amp;amp;postorder=asc&amp;amp;start=0&lt;/a&gt; &lt;/p&gt;
+&lt;p&gt;  ftp://ftp.dd-wrt.com/others/eko/BrainSlayer-V24-preSP2/2014/05-27-2014-r24160/linksys-ea2700/ &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;7) After the first dd-wrt boot, set the boot options in GUI (Administration -&amp;gt; commands -&amp;gt; save startup) &lt;/p&gt;
+&lt;p&gt;  nvram set partialboots=0 &lt;/p&gt;
+&lt;p&gt;  nvram commit &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;8 ) hard reset 30/30/30 &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;9) set again the boot options wich ha been erased by the hard reset 30/30/30 (Administration -&amp;gt; commands -&amp;gt; save startup) &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;10) Configure dd-wrt like i want &lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;Some-notes-and-known-problems&quot;&gt;&lt;a href=&quot;#Some-notes-and-known-problems&quot; class=&quot;headerlink&quot; title=&quot;Some notes and known problems : &quot;&gt;&lt;/a&gt;Some notes and known problems : &lt;/h2&gt;&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Without the falshing twice linksys classic (step 1 to 5), my EA2700 get back to stock after 3 reboots after flashing dd-wrt (step 6) &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Without setting the boot options on step 7 and 9 my EA2700 get back to stock after reboot (seem like there will be no patch Sad &lt;a href=&quot;http://svn.dd-wrt.com/ticket/3270&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://svn.dd-wrt.com/ticket/3270&lt;/a&gt;) &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;5Ghz radio is not detected, only 2.4Ghz is in the GUI (5Ghz radio is not supported but hope for usb drivers &lt;a href=&quot;http://www.dd-wrt.com/phpBB2/viewtopic.php?p=824484#824484&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.dd-wrt.com/phpBB2/viewtopic.php?p=824484#824484&lt;/a&gt;) &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Check Nvram use, between 25kb and 28kb (&amp;lt; 32kb so i guess its ok) &lt;/p&gt;
+&lt;p&gt; &lt;a href=&quot;http://www.dd-wrt.com/phpBB2/viewtopic.php?p=883001#883001&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.dd-wrt.com/phpBB2/viewtopic.php?p=883001#883001&lt;/a&gt; &lt;/p&gt;
+&lt;p&gt; &lt;a href=&quot;http://www.dd-wrt.com/phpBB2/viewtopic.php?p=901523#901523&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.dd-wrt.com/phpBB2/viewtopic.php?p=901523#901523&lt;/a&gt; &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;dd-wrt shows giga build &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;QoS used for 2 days and works like a charm! Smile &lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Thanks BrainSlayer, Fractal, LOM , &lt;em&gt;Robb&lt;/em&gt; and others for Serial Dump / reverse / giving us these firmwares&lt;br&gt;Thanks nolimitz and tehpensfan for the clear flash and known problems explanation for newbies and everybody at dd-wrt &lt;/p&gt;
+&lt;p&gt;Continue this good job!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Enjoy!&lt;/p&gt;
+&lt;p&gt;Source forum artical address: &lt;a href=&quot;http://www.dd-wrt.com/phpBB2/viewtopic.php?p=903074&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Link&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;/imgs/cisco-ea2700-wireless-router-linksys.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;I spent so many time to upgrade my new Linksys EA2700 router to the 
+    
+    </summary>
+    
+      <category term="Router" scheme="http://www.mxzhang.com/categories/Router/"/>
+    
+    
+      <category term="EA2700" scheme="http://www.mxzhang.com/tags/EA2700/"/>
+    
+      <category term="DDWRT" scheme="http://www.mxzhang.com/tags/DDWRT/"/>
+    
+      <category term="Router" scheme="http://www.mxzhang.com/tags/Router/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>How To Get ID3 Info from MP3 and M4A</title>
+    <link href="http://www.mxzhang.com/2016/03/30/How-To-Get-ID3-Info-from-MP3-and-M4A/"/>
+    <id>http://www.mxzhang.com/2016/03/30/How-To-Get-ID3-Info-from-MP3-and-M4A/</id>
+    <published>2016-03-29T17:50:39.000Z</published>
+    <updated>2016-03-29T19:13:30.000Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;img src=&quot;/imgs/m4a-mp3.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;Cause&quot;&gt;&lt;a href=&quot;#Cause&quot; class=&quot;headerlink&quot; title=&quot;Cause:&quot;&gt;&lt;/a&gt;Cause:&lt;/h2&gt;&lt;p&gt;Today, I got a requriement that get ID3 info from MP3 and M4A files.&lt;/p&gt;
+&lt;p&gt;I am good on MP3 knowledge, but I don’t familiar on M4A format so far.&lt;/p&gt;
+&lt;h2 id=&quot;Solution&quot;&gt;&lt;a href=&quot;#Solution&quot; class=&quot;headerlink&quot; title=&quot;Solution:&quot;&gt;&lt;/a&gt;Solution:&lt;/h2&gt;&lt;p&gt;First of all, I google it, and then I got answer so quickly.&lt;/p&gt;
+&lt;p&gt;I found a lib can help me to get them.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.jthink.net/jaudiotagger/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Jaudiotagger&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;Codes&quot;&gt;&lt;a href=&quot;#Codes&quot; class=&quot;headerlink&quot; title=&quot;Codes:&quot;&gt;&lt;/a&gt;Codes:&lt;/h2&gt;&lt;p&gt;Let’s see code directly:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Get track playing duration:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;AudioFile f = AudioFileIO.read(musicFile);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;int playingLen = f.getAudioHeader().getTrackLength();&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;It just so simple.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Get ID3 info:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;AudioFile f = AudioFileIO.read(file);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Tag tag = f.getTag();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;String artist = tag.getFirst(FieldKey.ARTIST);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;String id3Title = tag.getFirst(FieldKey.TITLE);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;String genre = tag.getFirst(FieldKey.GENRE);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;For more properties, you cloud refer FieldKey class.&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;/imgs/m4a-mp3.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;Cause&quot;&gt;&lt;a href=&quot;#Cause&quot; class=&quot;headerlink&quot; title=&quot;Cause:&quot;&gt;&lt;/a&gt;Cause:&lt;/h2&gt;&lt;p&gt;Today, I got
+    
+    </summary>
+    
+      <category term="Dev" scheme="http://www.mxzhang.com/categories/Dev/"/>
+    
+    
+      <category term="ID3" scheme="http://www.mxzhang.com/tags/ID3/"/>
+    
+      <category term="MP3" scheme="http://www.mxzhang.com/tags/MP3/"/>
+    
+      <category term="M4A" scheme="http://www.mxzhang.com/tags/M4A/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>用 Hexo 搭建个人 Blog </title>
+    <link href="http://www.mxzhang.com/2016/03/30/%E7%94%A8-Hexo-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA-Blog/"/>
+    <id>http://www.mxzhang.com/2016/03/30/用-Hexo-搭建个人-Blog/</id>
+    <published>2016-03-29T16:03:00.000Z</published>
+    <updated>2016-03-30T13:56:44.000Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;img src=&quot;/imgs/tree.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;最近 Hexo 非常火，加上之前用 Jeklly 搭建的个人 Blog 体验实在差强人意，所以决定切到 Hexo，养成更好的记录和分享习惯，同时，也帮助一下记忆力越来越差的快要生锈的那个大脑。&lt;/p&gt;
+&lt;p&gt;不多废话，以下记录基于 Mac OS X, 开始：&lt;/p&gt;
+&lt;p&gt;1，安装Hexo:&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ npm install hexo-cli -g&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ hexo init blog&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ cd blog&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ npm install&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ hexo server&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;这样就装好了, So easy。参考的当然是官网：&lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;2, 安装主题，我选择了 &lt;a href=&quot;https://github.com/ppoffice/hexo-theme-icarus/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;icarus&lt;/a&gt;，纯属个人口味，更多主题，当然可以参考：&lt;a href=&quot;https://hexo.io/themes/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo Themes&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;安装步骤，可参考： &lt;a href=&quot;https://github.com/ppoffice/hexo-theme-icarus/wiki/Installation&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;icarus Installtion&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Update: 由于 icarus 主题无法生成 catogories 和 tags 的主页面，所以我只好切换成另外一个主题&lt;a href=&quot;https://github.com/ppoffice/hexo-theme-hueman&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;hueman&lt;/a&gt;。 BTW，我个人不太喜欢 Next 主题。&lt;/p&gt;
+&lt;p&gt;3，一系列的配置，我主要修改了一些主题内相关的配置，记录如下，可参考文档：&lt;br&gt;&lt;a href=&quot;https://github.com/ppoffice/hexo-theme-icarus/wiki/Configuration&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo Configuration&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;4，发布到 Github.&lt;/p&gt;
+&lt;p&gt;首先，得安装插件：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ npm install hexo-deployer-git --save&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;然后修改配置如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;deploy: 
+    type: git
+    repository: https://github.com/fastzch/fastzch.github.io.git
+    branch: master
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;注意：网上有很多文章中写法可能太老，配置后，无法 deploy 到 git.&lt;/p&gt;
+&lt;p&gt;好了，大功告成！&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;/imgs/tree.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;最近 Hexo 非常火，加上之前用 Jeklly 搭建的个人 Blog 体验实在差强人意，所以决定切到 Hexo，养成更好的记录和分享习惯，同时，也帮助一下记忆力越来越差的快要生锈的那个大脑。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Other" scheme="http://www.mxzhang.com/categories/Other/"/>
+    
+    
+      <category term="Hexo" scheme="http://www.mxzhang.com/tags/Hexo/"/>
+    
+      <category term="Blog" scheme="http://www.mxzhang.com/tags/Blog/"/>
+    
+  </entry>
+  
+</feed>
