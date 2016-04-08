@@ -8,20 +8,17 @@
     
         <meta name="keywords" content="Xcode Plugin Eclipse" />
     
-    <meta name="description" content="###What’s this?
-I like delete line(s) feature by shortcut key (crontol/+d, command+d on Mac) so much on Eclipse, but Xcode does not has this feature.Fortunately, Xcode provides plugin mechnism, so I">
+    <meta name="description" content="What’s this?I like delete line(s) feature by shortcut key (crontol/+d, command+d on Mac) so much on Eclipse, but Xcode does not has this feature.Fortunately, Xcode provides plugin mechnism, so I deve">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Quick Delete Line/Lines Plugin for Xcode">
 <meta property="og:url" content="http://www.mxzhang.com/2016/04/08/Quick-Delete-Line-Lines-Plugin-for-Xcode/index.html">
 <meta property="og:site_name" content="FSD Space">
-<meta property="og:description" content="###What’s this?
-I like delete line(s) feature by shortcut key (crontol/+d, command+d on Mac) so much on Eclipse, but Xcode does not has this feature.Fortunately, Xcode provides plugin mechnism, so I">
+<meta property="og:description" content="What’s this?I like delete line(s) feature by shortcut key (crontol/+d, command+d on Mac) so much on Eclipse, but Xcode does not has this feature.Fortunately, Xcode provides plugin mechnism, so I deve">
 <meta property="og:image" content="http://www.mxzhang.com/imgs/sample_screenshot_delete.gif">
-<meta property="og:updated_time" content="2016-04-08T06:35:34.000Z">
+<meta property="og:updated_time" content="2016-04-08T06:51:11.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Quick Delete Line/Lines Plugin for Xcode">
-<meta name="twitter:description" content="###What’s this?
-I like delete line(s) feature by shortcut key (crontol/+d, command+d on Mac) so much on Eclipse, but Xcode does not has this feature.Fortunately, Xcode provides plugin mechnism, so I">
+<meta name="twitter:description" content="What’s this?I like delete line(s) feature by shortcut key (crontol/+d, command+d on Mac) so much on Eclipse, but Xcode does not has this feature.Fortunately, Xcode provides plugin mechnism, so I deve">
 <meta name="twitter:image" content="http://www.mxzhang.com/imgs/sample_screenshot_delete.gif">
     
 
@@ -145,12 +142,17 @@ var _hmt = _hmt || [];
         </div>
         <div class="article-entry" itemprop="articleBody">
             <p><img src="/imgs/sample_screenshot_delete.gif" alt=""></p>
-<p>###What’s this?</p>
-<p>I like delete line(s) feature by shortcut key (crontol/+d, command+d on Mac) so much on Eclipse, but Xcode does not has this feature.Fortunately, Xcode provides plugin mechnism, so I developed this plugin.</p>
+<h2 id="What’s-this"><a href="#What’s-this" class="headerlink" title="What’s this?"></a>What’s this?</h2><p>I like delete line(s) feature by shortcut key (crontol/+d, command+d on Mac) so much on Eclipse, but Xcode does not has this feature.Fortunately, Xcode provides plugin mechnism, so I developed this plugin.</p>
 <p>This plugin is so simple, and easy to use to delete line(s), the delete logic is same to Eclipse.</p>
-<p>###How to Use?</p>
-<p>You could install it from Alcatraz, it is so easy.</p>
+<h2 id="How-to-Use"><a href="#How-to-Use" class="headerlink" title="How to Use?"></a>How to Use?</h2><p>You could install it from Alcatraz, it is so easy.</p>
 <p>Enjoy it!</p>
+<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><p>1, Xcode 安装插件手误选择了「Skip Bundle」后需要重新允许「Load Bundle」的解决方法<br>在 Mac 终端输入命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 这里的7.3代表 Xcode 的版本号</span><br><span class="line">defaults delete com.apple.dt.Xcode DVTPlugInManagerNonApplePlugIns-Xcode-7.3</span><br></pre></td></tr></table></figure>
+<p>然后重启 Xcode 就会重新提示是否允许加载插件了。</p>
+<p>Xcode 插件的位置：<br>    ~/Library/Application Support/Developer/Shared/Xcode/Plug-ins</p>
+<p>2,当 Xcode 升级后，插件因为 UUID 问题而失效，我们该怎么解决呢？<br>首先：通过 Mac 终端命令查看当前版本 Xcode 的 UUID，输入如下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">defaults read /Applications/Xcode.app/Contents/Info DVTPlugInCompatibilityUUID</span><br></pre></td></tr></table></figure>
+<p>然后在插件程序的 info.plist 文件中的 DVTPlugInCompatibilityUUIDs 数组键值中添加当前版本 Xcode 的 UUID 即可。    </p>
 
         </div>
         <footer class="article-footer">
@@ -158,7 +160,7 @@ var _hmt = _hmt || [];
 
 
 
-    <a data-url="http://www.mxzhang.com/2016/04/08/Quick-Delete-Line-Lines-Plugin-for-Xcode/" data-id="cimrc6z8m0006x8b1bc632s2v" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://www.mxzhang.com/2016/04/08/Quick-Delete-Line-Lines-Plugin-for-Xcode/" data-id="cimrcppje00064yb16k08resa" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {

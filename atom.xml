@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.mxzhang.com/"/>
-  <updated>2016-04-08T06:35:34.000Z</updated>
+  <updated>2016-04-08T06:51:11.000Z</updated>
   <id>http://www.mxzhang.com/</id>
   
   <author>
@@ -20,22 +20,26 @@
     <link href="http://www.mxzhang.com/2016/04/08/Quick-Delete-Line-Lines-Plugin-for-Xcode/"/>
     <id>http://www.mxzhang.com/2016/04/08/Quick-Delete-Line-Lines-Plugin-for-Xcode/</id>
     <published>2016-04-08T06:31:03.000Z</published>
-    <updated>2016-04-08T06:35:34.000Z</updated>
+    <updated>2016-04-08T06:51:11.000Z</updated>
     
     <content type="html">&lt;p&gt;&lt;img src=&quot;/imgs/sample_screenshot_delete.gif&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;###What’s this?&lt;/p&gt;
-&lt;p&gt;I like delete line(s) feature by shortcut key (crontol/+d, command+d on Mac) so much on Eclipse, but Xcode does not has this feature.Fortunately, Xcode provides plugin mechnism, so I developed this plugin.&lt;/p&gt;
+&lt;h2 id=&quot;What’s-this&quot;&gt;&lt;a href=&quot;#What’s-this&quot; class=&quot;headerlink&quot; title=&quot;What’s this?&quot;&gt;&lt;/a&gt;What’s this?&lt;/h2&gt;&lt;p&gt;I like delete line(s) feature by shortcut key (crontol/+d, command+d on Mac) so much on Eclipse, but Xcode does not has this feature.Fortunately, Xcode provides plugin mechnism, so I developed this plugin.&lt;/p&gt;
 &lt;p&gt;This plugin is so simple, and easy to use to delete line(s), the delete logic is same to Eclipse.&lt;/p&gt;
-&lt;p&gt;###How to Use?&lt;/p&gt;
-&lt;p&gt;You could install it from Alcatraz, it is so easy.&lt;/p&gt;
+&lt;h2 id=&quot;How-to-Use&quot;&gt;&lt;a href=&quot;#How-to-Use&quot; class=&quot;headerlink&quot; title=&quot;How to Use?&quot;&gt;&lt;/a&gt;How to Use?&lt;/h2&gt;&lt;p&gt;You could install it from Alcatraz, it is so easy.&lt;/p&gt;
 &lt;p&gt;Enjoy it!&lt;/p&gt;
+&lt;h2 id=&quot;常见问题&quot;&gt;&lt;a href=&quot;#常见问题&quot; class=&quot;headerlink&quot; title=&quot;常见问题&quot;&gt;&lt;/a&gt;常见问题&lt;/h2&gt;&lt;p&gt;1, Xcode 安装插件手误选择了「Skip Bundle」后需要重新允许「Load Bundle」的解决方法&lt;br&gt;在 Mac 终端输入命令：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;# 这里的7.3代表 Xcode 的版本号&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;defaults delete com.apple.dt.Xcode DVTPlugInManagerNonApplePlugIns-Xcode-7.3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;然后重启 Xcode 就会重新提示是否允许加载插件了。&lt;/p&gt;
+&lt;p&gt;Xcode 插件的位置：&lt;br&gt;    ~/Library/Application Support/Developer/Shared/Xcode/Plug-ins&lt;/p&gt;
+&lt;p&gt;2,当 Xcode 升级后，插件因为 UUID 问题而失效，我们该怎么解决呢？&lt;br&gt;首先：通过 Mac 终端命令查看当前版本 Xcode 的 UUID，输入如下命令：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;defaults read /Applications/Xcode.app/Contents/Info DVTPlugInCompatibilityUUID&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;然后在插件程序的 info.plist 文件中的 DVTPlugInCompatibilityUUIDs 数组键值中添加当前版本 Xcode 的 UUID 即可。    &lt;/p&gt;
 </content>
     
     <summary type="html">
     
       &lt;p&gt;&lt;img src=&quot;/imgs/sample_screenshot_delete.gif&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;###What’s this?&lt;/p&gt;
-&lt;p&gt;I like delete line(s) feature by shortcut key (cronto
+&lt;h2 id=&quot;What’s-this&quot;&gt;&lt;a href=&quot;#What’s-this&quot; class=&quot;headerlink&quot; title=&quot;What’s th
     
     </summary>
     
