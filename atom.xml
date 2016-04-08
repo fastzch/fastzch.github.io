@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.mxzhang.com/"/>
-  <updated>2016-03-29T19:10:46.000Z</updated>
+  <updated>2016-04-08T06:35:34.000Z</updated>
   <id>http://www.mxzhang.com/</id>
   
   <author>
@@ -14,6 +14,68 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Quick Delete Line/Lines Plugin for Xcode</title>
+    <link href="http://www.mxzhang.com/2016/04/08/Quick-Delete-Line-Lines-Plugin-for-Xcode/"/>
+    <id>http://www.mxzhang.com/2016/04/08/Quick-Delete-Line-Lines-Plugin-for-Xcode/</id>
+    <published>2016-04-08T06:31:03.000Z</published>
+    <updated>2016-04-08T06:35:34.000Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;img src=&quot;/imgs/sample_screenshot_delete.gif&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;###What’s this?&lt;/p&gt;
+&lt;p&gt;I like delete line(s) feature by shortcut key (crontol/+d, command+d on Mac) so much on Eclipse, but Xcode does not has this feature.Fortunately, Xcode provides plugin mechnism, so I developed this plugin.&lt;/p&gt;
+&lt;p&gt;This plugin is so simple, and easy to use to delete line(s), the delete logic is same to Eclipse.&lt;/p&gt;
+&lt;p&gt;###How to Use?&lt;/p&gt;
+&lt;p&gt;You could install it from Alcatraz, it is so easy.&lt;/p&gt;
+&lt;p&gt;Enjoy it!&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;/imgs/sample_screenshot_delete.gif&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;###What’s this?&lt;/p&gt;
+&lt;p&gt;I like delete line(s) feature by shortcut key (cronto
+    
+    </summary>
+    
+      <category term="Dev" scheme="http://www.mxzhang.com/categories/Dev/"/>
+    
+    
+      <category term="Xcode Plugin Eclipse" scheme="http://www.mxzhang.com/tags/Xcode-Plugin-Eclipse/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Kill Alipay Dispatch Service on Mac</title>
+    <link href="http://www.mxzhang.com/2016/04/05/Kill-Alipay-Dispatch-Service/"/>
+    <id>http://www.mxzhang.com/2016/04/05/Kill-Alipay-Dispatch-Service/</id>
+    <published>2016-04-05T05:55:50.000Z</published>
+    <updated>2016-04-08T06:35:08.000Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;img src=&quot;/imgs/alipay_laji.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;今天观察了一下 Mac 上进程对文件读写的操作，发现一个极其流氓的进程，不停的在读写硬盘，而且频率相当高，便开始排查。&lt;/p&gt;
+&lt;p&gt;1，首先，打开 Instruments, 然后开启 All Processes 的 File Activity 文件监控功能，发现一大排 executable 为 AlipayDispatch 的进程在不停的读写硬盘。&lt;/p&gt;
+&lt;p&gt;2，接下来就是 google 看网友们有没有中招，一搜吓一跳，果然有很多人中招。&lt;/p&gt;
+&lt;p&gt;3，接下来就好说了，按照大家验证过的方法，删除掉 Alipay 的服务。&lt;br&gt;方法如下：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo launchctl unload /Library/LaunchDaemons/com.alipay.DispatcherService.plist &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo launchctl unload ~/Library/LaunchAgents/com.alipay.refresher.plist&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;【冷汗】没想到这么大公司干这种事，比较不理解，真让人失望！&lt;/p&gt;
+&lt;p&gt;References:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/ACChe/ac_blog/blob/master/content/posts/shut-down-AlipayDisptcherService-on_mac.md&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;shut-down-AlipayDisptcherService-on_mac&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;/imgs/alipay_laji.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;今天观察了一下 Mac 上进程对文件读写的操作，发现一个极其流氓的进程，不停的在读写硬盘，而且频率相当高，便开始排查。&lt;/p&gt;
+&lt;p&gt;1，首先，打开 Instruments, 然后开启 
+    
+    </summary>
+    
+      <category term="Other" scheme="http://www.mxzhang.com/categories/Other/"/>
+    
+    
+      <category term="Alipay" scheme="http://www.mxzhang.com/tags/Alipay/"/>
+    
+  </entry>
   
   <entry>
     <title>Linksys EA2700 Upgrade to DDWRT Note</title>
@@ -145,7 +207,7 @@
     <link href="http://www.mxzhang.com/2016/03/30/%E7%94%A8-Hexo-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA-Blog/"/>
     <id>http://www.mxzhang.com/2016/03/30/用-Hexo-搭建个人-Blog/</id>
     <published>2016-03-29T16:03:00.000Z</published>
-    <updated>2016-03-30T13:56:44.000Z</updated>
+    <updated>2016-04-08T06:33:42.000Z</updated>
     
     <content type="html">&lt;p&gt;&lt;img src=&quot;/imgs/tree.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;最近 Hexo 非常火，加上之前用 Jeklly 搭建的个人 Blog 体验实在差强人意，所以决定切到 Hexo，养成更好的记录和分享习惯，同时，也帮助一下记忆力越来越差的快要生锈的那个大脑。&lt;/p&gt;
 &lt;p&gt;不多废话，以下记录基于 Mac OS X, 开始：&lt;/p&gt;

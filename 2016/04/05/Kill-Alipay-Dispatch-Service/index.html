@@ -3,18 +3,29 @@
 <head>
     <meta charset="utf-8">
     
-    <title>标签：: M4A | FSD Space</title>
+    <title>Kill Alipay Dispatch Service on Mac | FSD Space</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta name="description" content="Robin&apos;s blog | Java | iOS | Android | 机器学习 | CDN | VR | AR | H.265">
-<meta property="og:type" content="website">
-<meta property="og:title" content="FSD Space">
-<meta property="og:url" content="http://www.mxzhang.com/tags/M4A/index.html">
+        <meta name="keywords" content="Alipay" />
+    
+    <meta name="description" content="今天观察了一下 Mac 上进程对文件读写的操作，发现一个极其流氓的进程，不停的在读写硬盘，而且频率相当高，便开始排查。
+1，首先，打开 Instruments, 然后开启 All Processes 的 File Activity 文件监控功能，发现一大排 executable 为 AlipayDispatch 的进程在不停的读写硬盘。
+2，接下来就是 google 看网友们有没有中招，一搜吓一跳">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Kill Alipay Dispatch Service on Mac">
+<meta property="og:url" content="http://www.mxzhang.com/2016/04/05/Kill-Alipay-Dispatch-Service/index.html">
 <meta property="og:site_name" content="FSD Space">
-<meta property="og:description" content="Robin&apos;s blog | Java | iOS | Android | 机器学习 | CDN | VR | AR | H.265">
+<meta property="og:description" content="今天观察了一下 Mac 上进程对文件读写的操作，发现一个极其流氓的进程，不停的在读写硬盘，而且频率相当高，便开始排查。
+1，首先，打开 Instruments, 然后开启 All Processes 的 File Activity 文件监控功能，发现一大排 executable 为 AlipayDispatch 的进程在不停的读写硬盘。
+2，接下来就是 google 看网友们有没有中招，一搜吓一跳">
+<meta property="og:image" content="http://www.mxzhang.com/imgs/alipay_laji.png">
+<meta property="og:updated_time" content="2016-04-08T06:35:08.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="FSD Space">
-<meta name="twitter:description" content="Robin&apos;s blog | Java | iOS | Android | 机器学习 | CDN | VR | AR | H.265">
+<meta name="twitter:title" content="Kill Alipay Dispatch Service on Mac">
+<meta name="twitter:description" content="今天观察了一下 Mac 上进程对文件读写的操作，发现一个极其流氓的进程，不停的在读写硬盘，而且频率相当高，便开始排查。
+1，首先，打开 Instruments, 然后开启 All Processes 的 File Activity 文件监控功能，发现一大排 executable 为 AlipayDispatch 的进程在不停的读写硬盘。
+2，接下来就是 google 看网友们有没有中招，一搜吓一跳">
+<meta name="twitter:image" content="http://www.mxzhang.com/imgs/alipay_laji.png">
     
 
     
@@ -110,73 +121,118 @@ var _hmt = _hmt || [];
                         <div class="main-body-header">
     <h1 class="header">
     
-    <i class="icon fa fa-tag"></i>标签：: <em>M4A</em>
+    <a class="page-title-link" href="/categories/Other/">Other</a>
     </h1>
 </div>
                         <div class="main-body-content">
-                            
-
-    
-    
+                            <article id="post-Kill-Alipay-Dispatch-Service" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
         
-        
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2016" class="archive-year"><i class="icon fa fa-calendar-o"></i>2016</a>
-            </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2016/03/30/How-To-Get-ID3-Info-from-MP3-and-M4A/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/imgs/m4a-mp3.png)" alt="How To Get ID3 Info from MP3 and M4A" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-</span>
-
-    
-</a>
-        
-        <div class="article-meta">
-            <p class="category">
-            <a class="article-category-link" href="/categories/Dev/">Dev</a>
-            </p>
-            <p class="date"><time datetime="2016-03-29T17:50:39.000Z" itemprop="datePublished">2016-03-30</time></p>
-        </div>
-        
+            <header class="article-header">
+                
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2016/03/30/How-To-Get-ID3-Info-from-MP3-and-M4A/">How To Get ID3 Info from MP3 and M4A</a>
+        Kill Alipay Dispatch Service on Mac
         </h1>
     
 
-        <p class="article-excerpt">
+            </header>
+        
+        <div class="article-subtitle">
+            <a href="/2016/04/05/Kill-Alipay-Dispatch-Service/" class="article-date">
+    <time datetime="2016-04-05T05:55:50.000Z" itemprop="datePublished">2016-04-05</time>
+</a>
             
-Cause:Today, I got a requriement that get ID3 info from MP3 and M4A files.
-I am good on MP3 knowledge, but I don’t familiar on M4A format so far.
-Solution:First of all, I google it, and then I got an
-        </p>
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Alipay/">Alipay</a></li></ul>
+
+        </div>
+        <div class="article-entry" itemprop="articleBody">
+            <p><img src="/imgs/alipay_laji.png" alt=""><br>今天观察了一下 Mac 上进程对文件读写的操作，发现一个极其流氓的进程，不停的在读写硬盘，而且频率相当高，便开始排查。</p>
+<p>1，首先，打开 Instruments, 然后开启 All Processes 的 File Activity 文件监控功能，发现一大排 executable 为 AlipayDispatch 的进程在不停的读写硬盘。</p>
+<p>2，接下来就是 google 看网友们有没有中招，一搜吓一跳，果然有很多人中招。</p>
+<p>3，接下来就好说了，按照大家验证过的方法，删除掉 Alipay 的服务。<br>方法如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo launchctl unload /Library/LaunchDaemons/com.alipay.DispatcherService.plist </span><br><span class="line"></span><br><span class="line">sudo launchctl unload ~/Library/LaunchAgents/com.alipay.refresher.plist</span><br></pre></td></tr></table></figure>
+<p>【冷汗】没想到这么大公司干这种事，比较不理解，真让人失望！</p>
+<p>References:</p>
+<p><a href="https://github.com/ACChe/ac_blog/blob/master/content/posts/shut-down-AlipayDisptcherService-on_mac.md" target="_blank" rel="external">shut-down-AlipayDisptcherService-on_mac</a></p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://www.mxzhang.com/2016/04/05/Kill-Alipay-Dispatch-Service/" data-id="cimrc6z8d0001x8b1hgfx0p3d" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
     </div>
 </article>
+
+    <section id="comments">
     
-        </div>
+        
+    <div id="uyan_frame"></div>
+
     
-
-
-    </div></section>
-
-
+    </section>
 
                         </div>
                     </section>
@@ -228,6 +284,29 @@ Solution:First of all, I google it, and then I got an
             
         </ul>
     </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2016/04/08/Quick-Delete-Line-Lines-Plugin-for-Xcode/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">下一篇</strong>
+        <p class="article-nav-title">
+        
+            Quick Delete Line/Lines Plugin for Xcode
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2016/03/30/Linksys-EA2700-Upgrade-to-DDWRT-Note/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">Linksys EA2700 Upgrade to DDWRT Note</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
     
     <div class="widgets-container">
         

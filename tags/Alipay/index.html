@@ -3,13 +3,13 @@
 <head>
     <meta charset="utf-8">
     
-    <title>标签：: M4A | FSD Space</title>
+    <title>标签：: Alipay | FSD Space</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="description" content="Robin&apos;s blog | Java | iOS | Android | 机器学习 | CDN | VR | AR | H.265">
 <meta property="og:type" content="website">
 <meta property="og:title" content="FSD Space">
-<meta property="og:url" content="http://www.mxzhang.com/tags/M4A/index.html">
+<meta property="og:url" content="http://www.mxzhang.com/tags/Alipay/index.html">
 <meta property="og:site_name" content="FSD Space">
 <meta property="og:description" content="Robin&apos;s blog | Java | iOS | Android | 机器学习 | CDN | VR | AR | H.265">
 <meta name="twitter:card" content="summary">
@@ -110,7 +110,7 @@ var _hmt = _hmt || [];
                         <div class="main-body-header">
     <h1 class="header">
     
-    <i class="icon fa fa-tag"></i>标签：: <em>M4A</em>
+    <i class="icon fa fa-tag"></i>标签：: <em>Alipay</em>
     </h1>
 </div>
                         <div class="main-body-content">
@@ -133,10 +133,10 @@ var _hmt = _hmt || [];
         <article class="article article-summary">
     <div class="article-summary-inner">
         
-        <a href="/2016/03/30/How-To-Get-ID3-Info-from-MP3-and-M4A/" class="thumbnail">
+        <a href="/2016/04/05/Kill-Alipay-Dispatch-Service/" class="thumbnail">
     
     
-        <span style="background-image:url(/imgs/m4a-mp3.png)" alt="How To Get ID3 Info from MP3 and M4A" class="thumbnail-image"></span>
+        <span style="background-image:url(/imgs/alipay_laji.png)" alt="Kill Alipay Dispatch Service on Mac" class="thumbnail-image"></span>
     
     
         
@@ -150,22 +150,21 @@ var _hmt = _hmt || [];
         
         <div class="article-meta">
             <p class="category">
-            <a class="article-category-link" href="/categories/Dev/">Dev</a>
+            <a class="article-category-link" href="/categories/Other/">Other</a>
             </p>
-            <p class="date"><time datetime="2016-03-29T17:50:39.000Z" itemprop="datePublished">2016-03-30</time></p>
+            <p class="date"><time datetime="2016-04-05T05:55:50.000Z" itemprop="datePublished">2016-04-05</time></p>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2016/03/30/How-To-Get-ID3-Info-from-MP3-and-M4A/">How To Get ID3 Info from MP3 and M4A</a>
+        <a href="/2016/04/05/Kill-Alipay-Dispatch-Service/">Kill Alipay Dispatch Service on Mac</a>
         </h1>
     
 
         <p class="article-excerpt">
-            
-Cause:Today, I got a requriement that get ID3 info from MP3 and M4A files.
-I am good on MP3 knowledge, but I don’t familiar on M4A format so far.
-Solution:First of all, I google it, and then I got an
+            今天观察了一下 Mac 上进程对文件读写的操作，发现一个极其流氓的进程，不停的在读写硬盘，而且频率相当高，便开始排查。
+1，首先，打开 Instruments, 然后开启 All Processes 的 File Activity 文件监控功能，发现一大排 executable 为 AlipayDispatch 的进程在不停的读写硬盘。
+2，接下来就是 google 看网友们有没有中招，一搜吓一跳
         </p>
     </div>
 </article>
