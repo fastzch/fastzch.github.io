@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.mxzhang.com/"/>
-  <updated>2016-04-10T09:46:33.000Z</updated>
+  <updated>2016-05-12T03:05:11.000Z</updated>
   <id>http://www.mxzhang.com/</id>
   
   <author>
@@ -14,6 +14,66 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>UIWebView vs WKWebView</title>
+    <link href="http://www.mxzhang.com/2016/04/22/UIWebView-vs-WKWebView/"/>
+    <id>http://www.mxzhang.com/2016/04/22/UIWebView-vs-WKWebView/</id>
+    <published>2016-04-22T03:13:55.000Z</published>
+    <updated>2016-05-12T03:05:11.000Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;Three-options-to-open-web-content-in-app&quot;&gt;&lt;a href=&quot;#Three-options-to-open-web-content-in-app&quot; class=&quot;headerlink&quot; title=&quot;Three options to open web content in app&quot;&gt;&lt;/a&gt;Three options to open web content in app&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;UIWebView (deprecated on iOS 8)&lt;/li&gt;
+&lt;li&gt;WKWebView (entered on iOS 8)&lt;/li&gt;
+&lt;li&gt;SFSafariViewController (entered on iOS 9)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;Quick-comparsion&quot;&gt;&lt;a href=&quot;#Quick-comparsion&quot; class=&quot;headerlink&quot; title=&quot;Quick comparsion&quot;&gt;&lt;/a&gt;Quick comparsion&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;/imgs/compare_uiwebview.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;Recommandations&quot;&gt;&lt;a href=&quot;#Recommandations&quot; class=&quot;headerlink&quot; title=&quot;Recommandations&quot;&gt;&lt;/a&gt;Recommandations&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;Use WKWebView as the default browser if your app implements customize behavior (UI or “behind the scene”).&lt;/li&gt;
+&lt;li&gt;Use SFSafariViewController as the default browser if your app wants to present a webpage without any customization.&lt;/li&gt;
+&lt;li&gt;If your app supports iOS &amp;lt; 8.0 make sure your app open the best performing browser available. See example in&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;if (SYSTEM_VERSION_LESS_THAN(@&amp;quot;8.0&amp;quot;)) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    self.webView = [[UIWebView alloc] initWithFrame:frame];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    self.webView.scalesPageToFit = YES;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    [self.webView setTranslatesAutoresizingMaskIntoConstraints: NO];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    self.webView.delegate = self;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    // Fast scrolling&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    self.webView.scrollView.decelerationRate = UIScrollViewDecelerationRateNormal;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    [self.view addSubview:self.webView];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;else &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    self.wk_WebView = [[WKWebView alloc] initWithFrame:frame];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    self.wk_WebView.navigationDelegate = self;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    [self.view addSubview:self.wk_WebView];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;UIWebView&quot;&gt;&lt;a href=&quot;#UIWebView&quot; class=&quot;headerlink&quot; title=&quot;UIWebView&quot;&gt;&lt;/a&gt;UIWebView&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;Apple legacy in-app Webview&lt;/li&gt;
+&lt;li&gt;According to Apple: “In apps that run in iOS 8 and later, use the WKWebView class instead of using UIWebView.”&lt;/li&gt;
+&lt;li&gt;Should be used only in apps that supports iOS &amp;lt; 8.0 and even than, the best practice is to detect the OS version in runtime and if the version is 8.0 or more – open the web content in WKWebView.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;WKWebView&quot;&gt;&lt;a href=&quot;#WKWebView&quot; class=&quot;headerlink&quot; title=&quot;WKWebView&quot;&gt;&lt;/a&gt;WKWebView&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;The in-app webview recommended by Apple for apps that have needs to customize the web-browsing behaviour in either UI\UX aspects or functionality aspects (such as, send ping to the app server when page finished loading).&lt;/li&gt;
+&lt;li&gt;Supports Nitro engine which is a big deal (much faster rendering)&lt;/li&gt;
+&lt;li&gt;From internal tests, WKWebview is 25%-30% faster than UIWebview.&lt;/li&gt;
+&lt;li&gt;Overall performance is much better (See &lt;a href=&quot;http://blog.initlabs.com/post/100113463211/wkwebview-vs-uiwebview&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://blog.initlabs.com/post/100113463211/wkwebview-vs-uiwebview&lt;/a&gt;)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;SFSafariViewController&quot;&gt;&lt;a href=&quot;#SFSafariViewController&quot; class=&quot;headerlink&quot; title=&quot;SFSafariViewController&quot;&gt;&lt;/a&gt;SFSafariViewController&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;Released together with iOS 9.0&lt;/li&gt;
+&lt;li&gt;Essentially acts as a Safari instance which belongs (part of) the container app.&lt;/li&gt;
+&lt;li&gt;From Apple docs: “The SFSafariViewController class provides a standard interface for browsing the web. The view controller includes Safari features such as Reader, AutoFill, Fraudulent Website Detection, and content blocking. It shares cookies and other website data with Safari. The user’s activity and interaction with SFSafariViewController are not visible to your app, which cannot access AutoFill data, browsing history, or website data. You do not need to secure data between your app and Safari.”&lt;/li&gt;
+&lt;li&gt;In terms of functionality, the developer can not manipulate or be informed on anything that happens inside the browser except for the original URL which opens in the browser.&lt;/li&gt;
+&lt;li&gt;Apple pushing developers towards this implementation even though they are aware of the drawbacks.&lt;/li&gt;
+&lt;li&gt;Cookies are synced with Safari app&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;Reference&quot;&gt;&lt;a href=&quot;#Reference&quot; class=&quot;headerlink&quot; title=&quot;Reference:&quot;&gt;&lt;/a&gt;Reference:&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;http://developer.outbrain.com/ios-best-practices-for-opening-a-web-page-within-an-app/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://developer.outbrain.com/ios-best-practices-for-opening-a-web-page-within-an-app/&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Three-options-to-open-web-content-in-app&quot;&gt;&lt;a href=&quot;#Three-options-to-open-web-content-in-app&quot; class=&quot;headerlink&quot; title=&quot;Three option
+    
+    </summary>
+    
+      <category term="Dev" scheme="http://www.mxzhang.com/categories/Dev/"/>
+    
+    
+      <category term="iOS" scheme="http://www.mxzhang.com/tags/iOS/"/>
+    
+      <category term="UIWebView" scheme="http://www.mxzhang.com/tags/UIWebView/"/>
+    
+      <category term="WKWebView" scheme="http://www.mxzhang.com/tags/WKWebView/"/>
+    
+      <category term="SFSafariViewController" scheme="http://www.mxzhang.com/tags/SFSafariViewController/"/>
+    
+  </entry>
   
   <entry>
     <title>Markdown Simple Usage on Hexo</title>
@@ -49,9 +109,9 @@
       <category term="Other" scheme="http://www.mxzhang.com/categories/Other/"/>
     
     
-      <category term="Hexo" scheme="http://www.mxzhang.com/tags/Hexo/"/>
-    
       <category term="Markdown" scheme="http://www.mxzhang.com/tags/Markdown/"/>
+    
+      <category term="Hexo" scheme="http://www.mxzhang.com/tags/Hexo/"/>
     
   </entry>
   
